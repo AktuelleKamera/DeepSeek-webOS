@@ -43,7 +43,7 @@
 - 基于 Enyo 2.5.1 / webOS 3.0 原生框架
 - JavaScript 实现
 - 使用 XMLHttpRequest 调用 DeepSeek API
-- 支持 Markdown 渲染（待实现）
+- 支持 Markdown 渲染
 
 ---
 
