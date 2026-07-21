@@ -1,0 +1,517 @@
+/* ===== 全局 ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.chat-theme,
+.chat-theme .enyo-fittable-rows-layout {
+    color: #2c2c2c;
+}
+
+/* ====================================
+   棕色主题（皮革质感）
+   ==================================== */
+.theme-brown,
+.theme-brown .enyo-fittable-rows-layout {
+    background: #d6d1cb;
+    background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(0,0,0,0.05) 0%, transparent 60%);
+}
+
+.theme-brown .chat-toolbar {
+    background: #3a322a;
+    background-image: linear-gradient(to bottom, #5a4f45 0%, #3a322a 4%, #2e2720 100%);
+    border-bottom: 1px solid #1a1510;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 2px 4px rgba(0,0,0,0.4);
+    color: #f0e8d8;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.6);
+}
+
+.theme-brown .chat-toolbar .onyx-button {
+    background: #4a4036;
+    background-image: linear-gradient(to bottom, #6a5e52 0%, #4a4036 50%, #3a322a 100%);
+    border: 1px solid #1e1a15;
+    border-top-color: #6a5e52;
+    color: #f0e8d8;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+}
+
+.theme-brown .chat-toolbar .onyx-button:active {
+    background: #3a322a;
+    background-image: linear-gradient(to bottom, #2e2720 0%, #4a4036 100%);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.theme-brown .chat-scroller {
+    background: #d6d1cb;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    box-shadow: inset 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.theme-brown .chat-input-bar {
+    background: #c8c2ba;
+    background-image: linear-gradient(to bottom, #d6d1cb 0%, #c8c2ba 4%, #b8b2a8 100%);
+    border-top: 1px solid #a8a29a;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 -2px 6px rgba(0,0,0,0.08);
+}
+
+.theme-brown .chat-input-bar .onyx-input {
+    background: #faf8f4;
+    border: 1px solid #a8a29a;
+    border-top-color: #8a8580;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.12), 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.theme-brown .chat-input-bar .onyx-button:not(.chat-send-btn) {
+    background: #a8a29a;
+    background-image: linear-gradient(to bottom, #c8c2ba 0%, #a8a29a 50%, #98928a 100%);
+    border: 1px solid #88827a;
+    border-top-color: #c8c2ba;
+    color: #3a322a;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 4px rgba(0,0,0,0.15);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.theme-brown .chat-input-bar .onyx-button:not(.chat-send-btn):active {
+    background: #98928a;
+    background-image: linear-gradient(to bottom, #88827a 0%, #a8a29a 100%);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ====================================
+   蓝色主题（丹宁质感）
+   ==================================== */
+.theme-blue,
+.theme-blue .enyo-fittable-rows-layout {
+    background: #c8d4db;
+    background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(0,0,0,0.04) 0%, transparent 60%);
+}
+
+.theme-blue .chat-toolbar {
+    background: #1a2a4a;
+    background-image: linear-gradient(to bottom, #2a4068 0%, #1a2a4a 4%, #0e1a30 100%);
+    border-bottom: 1px solid #080e1a;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.5);
+    color: #d8e4f0;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.6);
+}
+
+.theme-blue .chat-toolbar .onyx-button {
+    background: #2a4068;
+    background-image: linear-gradient(to bottom, #3a5a8a 0%, #2a4068 50%, #1a2a4a 100%);
+    border: 1px solid #0e1a30;
+    border-top-color: #3a5a8a;
+    color: #d8e4f0;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+}
+
+.theme-blue .chat-toolbar .onyx-button:active {
+    background: #1a2a4a;
+    background-image: linear-gradient(to bottom, #0e1a30 0%, #2a4068 100%);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.theme-blue .chat-scroller {
+    background: #c8d4db;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    box-shadow: inset 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.theme-blue .chat-input-bar {
+    background: #b0c0cc;
+    background-image: linear-gradient(to bottom, #c8d4db 0%, #b0c0cc 4%, #a0b0bc 100%);
+    border-top: 1px solid #90a0ac;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 -2px 6px rgba(0,0,0,0.08);
+}
+
+.theme-blue .chat-input-bar .onyx-input {
+    background: #f5f8fa;
+    border: 1px solid #90a0ac;
+    border-top-color: #7a8a96;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.12), 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.theme-blue .chat-input-bar .onyx-button:not(.chat-send-btn) {
+    background: #8a9aaa;
+    background-image: linear-gradient(to bottom, #b0c0cc 0%, #8a9aaa 50%, #7a8a9a 100%);
+    border: 1px solid #6a7a8a;
+    border-top-color: #b0c0cc;
+    color: #1a2a3a;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 4px rgba(0,0,0,0.15);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.theme-blue .chat-input-bar .onyx-button:not(.chat-send-btn):active {
+    background: #7a8a9a;
+    background-image: linear-gradient(to bottom, #6a7a8a 0%, #8a9aaa 100%);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ====================================
+   共享样式（不随主题变化）
+   ==================================== */
+
+.chat-toolbar {
+    padding: 8px 12px;
+    min-height: 44px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.chat-toolbar .onyx-button {
+    border-radius: 6px;
+    min-width: 40px;
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.chat-scroller {
+    background-size: 120px 120px;
+}
+
+.chat-area {
+    padding: 16px 12px;
+    min-height: 100%;
+}
+
+/* ===== 欢迎文字 ===== */
+.chat-welcome {
+    text-align: center;
+    color: #8a8580;
+    font-size: 15px;
+    margin-top: 50px;
+    font-style: italic;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.theme-blue .chat-welcome {
+    color: #6a7a8a;
+}
+
+/* ===== 消息行 ===== */
+.msg-row {
+    margin-bottom: 14px;
+    clear: both;
+}
+
+.msg-row.msg-user { text-align: right; }
+.msg-row.msg-assistant { text-align: left; }
+
+/* ===== 消息气泡 ===== */
+.msg-bubble {
+    display: inline-block;
+    max-width: 78%;
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    text-align: left;
+    position: relative;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* -- 用户气泡（蓝色渐变，两个主题共用） -- */
+.msg-user-bubble {
+    background: #34a5e4;
+    background-image: linear-gradient(to bottom, #4db8f0 0%, #2a93d0 50%, #1f7db5 100%);
+    color: #fff;
+    border-radius: 18px 18px 4px 18px;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.35),
+        0 2px 4px rgba(0,0,0,0.2),
+        0 0 0 1px rgba(0,0,0,0.05);
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.msg-user-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background: #2a93d0;
+    border-radius: 0 0 0 16px;
+    box-shadow: -2px 2px 3px rgba(0,0,0,0.08);
+}
+
+/* -- AI 气泡（亚麻纸质感） -- */
+.msg-ai-bubble {
+    background: #f8f6f0;
+    background-image: linear-gradient(to bottom, #ffffff 0%, #f8f6f0 50%, #eeebe5 100%);
+    color: #2c2c2c;
+    border-radius: 18px 18px 18px 4px;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.9),
+        0 2px 6px rgba(0,0,0,0.15),
+        0 0 0 1px rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.theme-blue .msg-ai-bubble {
+    background: #f0f4f8;
+    background-image: linear-gradient(to bottom, #fafcfe 0%, #f0f4f8 50%, #e4eaf0 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.9),
+        0 2px 6px rgba(0,0,0,0.12),
+        0 0 0 1px rgba(0,0,0,0.05);
+}
+
+.msg-ai-bubble.error {
+    background: #fdf0ef;
+    background-image: linear-gradient(to bottom, #fff5f4 0%, #fde8e5 100%);
+    color: #c0392b;
+}
+
+.msg-ai-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+    background: #f8f6f0;
+    border-radius: 0 0 16px 0;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.08);
+}
+
+.theme-blue .msg-ai-bubble::after {
+    background: #f0f4f8;
+}
+
+/* ===== 思考动画 ===== */
+.thinking-dots {
+    color: #8a8580;
+    font-style: italic;
+}
+
+/* ===== Markdown 样式 ===== */
+.msg-bubble p { margin: 0 0 8px 0; }
+.msg-bubble p:last-child { margin-bottom: 0; }
+.msg-bubble pre { margin: 8px 0; padding: 10px 12px; background: #2c2c2c; border-radius: 8px; overflow-x: auto; }
+.msg-bubble code { font-family: "Courier New", monospace; font-size: 13px; }
+.msg-bubble pre code { background: transparent; color: #e8e4dc; padding: 0; border: none; }
+.msg-bubble code:not(pre code) { background: rgba(0,0,0,0.06); padding: 2px 5px; border-radius: 3px; color: #c0392b; }
+.msg-user-bubble code:not(pre code) { background: rgba(255,255,255,0.2); color: #fff; }
+.msg-user-bubble pre { background: rgba(0,0,0,0.3); }
+.msg-bubble h1, .msg-bubble h2, .msg-bubble h3 { margin: 10px 0 6px 0; line-height: 1.3; }
+.msg-bubble h1 { font-size: 17px; }
+.msg-bubble h2 { font-size: 16px; }
+.msg-bubble h3 { font-size: 15px; }
+.msg-bubble ul, .msg-bubble ol { margin: 6px 0; padding-left: 22px; }
+.msg-bubble li { margin-bottom: 3px; }
+.msg-bubble a { color: #34a5e4; text-decoration: underline; }
+.msg-user-bubble a { color: #b8e4ff; }
+.msg-bubble br { display: block; content: ""; margin: 4px 0; }
+
+/* ===== 底部输入栏（共享） ===== */
+.chat-input-bar {
+    padding: 8px;
+}
+
+.chat-input-bar .onyx-input {
+    border-radius: 20px;
+    height: 36px;
+    font-size: 14px;
+    padding: 0 14px;
+    color: #2c2c2c;
+    width: 78%;
+}
+
+.chat-input-bar .onyx-input:focus {
+    border-color: #34a5e4;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.12), 0 0 0 2px rgba(52,165,228,0.25);
+}
+
+.chat-input-bar .onyx-button {
+    border-radius: 20px;
+    height: 36px;
+    padding: 6px 18px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* -- 发送按钮（两个主题共用蓝色） -- */
+.chat-input-bar .onyx-button.chat-send-btn {
+    background: #34a5e4;
+    background-image: linear-gradient(to bottom, #5cc0f5 0%, #34a5e4 50%, #1f8bc8 100%);
+    border: 1px solid #1a78b0;
+    border-top-color: #5cc0f5;
+    color: #fff;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+}
+
+.chat-input-bar .onyx-button.chat-send-btn:active {
+    background: #1f8bc8;
+    background-image: linear-gradient(to bottom, #1a78b0 0%, #34a5e4 100%);
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* ===== 设置弹窗 ===== */
+.onyx-popup {
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,0,0,0.1);
+    background: #faf8f4;
+    background-image: linear-gradient(to bottom, #fefcf8 0%, #f5f2ec 100%);
+    border: 1px solid #d6d1cb;
+}
+
+.theme-blue .onyx-popup {
+    background: #f5f8fa;
+    background-image: linear-gradient(to bottom, #fafcfe 0%, #eef2f6 100%);
+    border: 1px solid #c0ccd6;
+}
+
+.theme-btn-brown::before,
+.theme-btn-blue::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+.theme-btn-brown::before { background: #5a4f45; }
+.theme-btn-blue::before { background: #2a4068; }
+
+.onyx-popup .onyx-input {
+    background: #fff;
+    border: 1px solid #c8c2ba;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.08);
+    height: 36px;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+/* ====================================
+   左侧历史对话侧边栏
+   ==================================== */
+.side-panel {
+    border-right: 1px solid rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.theme-brown .side-panel {
+    background: #c8c2b8;
+    background-image: linear-gradient(to bottom, #d6d1cb 0%, #c8c2b8 100%);
+}
+
+.theme-blue .side-panel {
+    background: #b8c8d4;
+    background-image: linear-gradient(to bottom, #c8d4db 0%, #b0c0cc 100%);
+}
+
+.theme-brown .side-header {
+    color: #4a4036;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.theme-blue .side-header {
+    color: #2a4068;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.theme-brown .side-header .onyx-button.side-new-btn {
+    background: #a8a09a;
+    background-image: linear-gradient(to bottom, #c8c2ba 0%, #a8a09a 50%, #98908a 100%);
+    border: 1px solid #88807a;
+    border-top-color: #c8c2ba;
+    color: #3a322a;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 1px 3px rgba(0,0,0,0.15);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.theme-brown .side-header .onyx-button.side-new-btn:active {
+    background: #98908a;
+    background-image: linear-gradient(to bottom, #88807a 0%, #a8a09a 100%);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+    border-top-color: #88807a;
+}
+
+.theme-blue .side-header .onyx-button.side-new-btn {
+    background: #8a9aaa;
+    background-image: linear-gradient(to bottom, #b0c0cc 0%, #8a9aaa 50%, #7a8a9a 100%);
+    border: 1px solid #6a7a8a;
+    border-top-color: #b0c0cc;
+    color: #1a2a3a;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 1px 3px rgba(0,0,0,0.15);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.theme-blue .side-header .onyx-button.side-new-btn:active {
+    background: #7a8a9a;
+    background-image: linear-gradient(to bottom, #6a7a8a 0%, #8a9aaa 100%);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+    border-top-color: #6a7a8a;
+}
+
+.side-scroller {
+    /* Enyo Scroller handles scrolling internally */
+}
+
+.side-list {
+    padding: 4px 0;
+}
+
+.side-empty {
+    text-align: center;
+    color: #8a8580;
+    font-size: 13px;
+    padding: 24px 12px;
+    font-style: italic;
+}
+
+.side-item {
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: background 0.15s;
+}
+
+.theme-brown .side-item { color: #4a4036; }
+.theme-blue .side-item { color: #2a4068; }
+
+.theme-brown .side-item:hover { background: rgba(0,0,0,0.05); }
+.theme-blue .side-item:hover { background: rgba(0,0,0,0.05); }
+
+.theme-brown .side-item-active,
+.theme-brown .side-item:active {
+    background: #b8b0a8;
+    background-image: linear-gradient(to bottom, #c8c0b8 0%, #a8a09a 100%);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.theme-blue .side-item-active,
+.theme-blue .side-item:active {
+    background: #a8b8c8;
+    background-image: linear-gradient(to bottom, #b8c8d4 0%, #98a8b8 100%);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.side-item-title {
+    font-size: 13px;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* FittableColumns 需要用全高 */
+.chat-theme.enyo-fittable-columns {
+    height: 100%;
+}

@@ -1,0 +1,10 @@
+{
+    "id": "com.deepseek.webos",
+    "version": "1.0.0",
+    "vendor": "DeepSeek",
+    "type": "web",
+    "main": "index.html",
+    "title": "DeepSeek",
+    "icon": "icon.png",
+    "uiRevision": "2"
+}
